@@ -23,7 +23,7 @@ public class Student {
         return field;
     }
 
-    public void setField(String area) {
+    public void setField(String field) {
         this.field = field;
     }
 

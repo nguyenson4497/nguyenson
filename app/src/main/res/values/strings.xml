@@ -3,7 +3,7 @@
 
     <string name="name">Tên:</string>
 
-    <string name="birth_day">Ngày sinh:</string>
+    <string name="birth_day">Năm sinh:</string>
 
     <string name="phone_number">Liên hệ:</string>
 
@@ -28,6 +28,12 @@
     <string name="filter_dh">Lọc ĐH</string>
 
     <string name="show_list">Hiển Thị</string>
+
+    <string name="save">Lưu</string>
+
+    <string name="university">Đại học</string>
+
+    <string name="college">Cao đẳng</string>
 
 
 </resources>
