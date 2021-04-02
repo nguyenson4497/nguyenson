@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText edtFind, edtName, edtBirthDay, edtPhone, edtField, edtLevel;
     private ImageView ivFind;
     private List<Student> list;
+    private Spinner spinnerLevel;
+    private SpinnerAdapter spinnerAdapter;
     public static final String DH = "Dai hoc";
     public static final String CD = "Cao dang";
 
@@ -38,12 +40,16 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Student("Hoang Anh", "1995", "0999999999", "Quan tri", "Cao dang"));
         list.add(new Student("thu thao", "1993", "0912999999", "Quan tri", "Cao dang"));
 
+        //Spinner
+       spinnerLevel = findViewById(R.id.spn_level);
+       spinnerAdapter = new SpinnerAdapter(this, R.layout.layout_item_selected,getListStudent());
+
         //EditText
         edtName = findViewById(R.id.edt_name);
         edtBirthDay = findViewById(R.id.edt_birth_day);
         edtPhone = findViewById(R.id.edt_phone_number);
         edtField = findViewById(R.id.edt_field);
-        edtLevel = findViewById(R.id.edt_level);
+       // edtLevel = findViewById(R.id.edt_level);
 
         //Button
         btnAdd = findViewById(R.id.btn_add);
@@ -137,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
 
         //EditText
         edtFind = findViewById(R.id.edt_find);
+    }
+
+    private List<Spinner> getListStudent() {
+
     }
 
     //Save Information
