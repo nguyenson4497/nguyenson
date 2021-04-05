@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     val listStudent: MutableList<Student> = mutableListOf()
+    val listAllStudent: MutableList<Student> = mutableListOf()
     var studentAdapter: StudentAdapter = StudentAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,11 +90,19 @@ class MainActivity : AppCompatActivity() {
 
     //Filter Student
     fun filterByUniversity() {
-
+        for (i in listStudent) {
+            if(i.level.equals("Dai Hoc")) {
+                studentAdapter.filter
+            }
+        }
     }
 
     fun filterByCollege() {
-
+        for (i in listStudent) {
+            if(i.level.equals("Cao Dang")) {
+                studentAdapter.filter
+            }
+        }
     }
 
     //Add Student
