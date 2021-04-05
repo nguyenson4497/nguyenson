@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Danh Sách Sinh Viên</string>
+    <string name="app_name">Student Manager</string>
 
     <string name="name">Tên:</string>
 
-    <string name="year_of_birth">Năm sinh:</string>
+    <string name="year_of_birth">Năm Sinh:</string>
 
-    <string name="phone_number">Liên hệ:</string>
+    <string name="phone_number">SĐT:</string>
 
-    <string name="field">Chuyên ngành:</string>
+    <string name="field">Ngành:</string>
 
     <string name="add">Thêm</string>
 
@@ -17,17 +17,17 @@
 
     <string name="level">Hệ:</string>
 
-    <string name="sort_name">Sort Name</string>
+    <string name="sort_name">SX Tên</string>
 
-    <string name="sort_year">Sort Year</string>
+    <string name="sort_year">SX Năm</string>
 
-    <string name="sort_phone_number">Sort Phone</string>
+    <string name="sort_phone_number">SX SĐT</string>
 
     <string name="filter_col">Lọc CĐ</string>
 
     <string name="filter_uni">Lọc ĐH</string>
 
-    <string name="show_list">Hiển Thị</string>
+    <string name="find">Tìm Kiếm</string>
 
     <string name="save">Lưu</string>
 

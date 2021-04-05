@@ -211,15 +211,6 @@
             android:layout_weight="1"
             android:text="@string/sort_phone_number" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_10"
-        android:gravity="center"
-        android:padding="@dimen/dp_5">
-
         <Button
             android:id="@+id/btn_filter_col"
             android:layout_width="@dimen/dp_0"
@@ -236,13 +227,31 @@
             android:layout_weight="1"
             android:text="@string/filter_uni" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:padding="@dimen/dp_5">
+
+        <EditText
+            android:id="@+id/edt_find"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_50"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_weight="2"
+            android:hint="@string/find"
+            android:textSize="@dimen/dp_16" />
+
         <Button
-            android:id="@+id/btn_show"
+            android:id="@+id/btn_find"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_50"
             android:layout_margin="@dimen/dp_10"
             android:layout_weight="1"
-            android:text="@string/show_list"
+            android:text="@string/find"
             android:textSize="@dimen/dp_16" />
 
     </LinearLayout>

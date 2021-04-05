@@ -10,8 +10,8 @@ class StudentAdapter : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() 
     var listData: MutableList<Student> = mutableListOf()
 
     fun setData(listData: MutableList<Student>) {
-       this.listData = listData
-       notifyDataSetChanged()
+        this.listData = listData
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
@@ -22,14 +22,14 @@ class StudentAdapter : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() 
     }
 
     override fun getItemCount(): Int {
-            return listData.size;
+        return listData.size;
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         var student: Student = listData[position]
-            holder.nameStudent.text = student.name
-            holder.phoneStudent.text = student.phoneNumber
-            holder.levelStudent.text = student.level
+        holder.nameStudent.text = student.name
+        holder.phoneStudent.text = student.phoneNumber
+        holder.levelStudent.text = student.level
     }
 
     class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
