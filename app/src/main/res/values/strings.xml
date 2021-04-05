@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Danh Sách Sinh Viên</string>
+
+    <string name="name">Tên:</string>
+
+    <string name="year_of_birth">Năm sinh:</string>
+
+    <string name="phone_number">Liên hệ:</string>
+
+    <string name="field">Chuyên ngành:</string>
+
+    <string name="add">Thêm</string>
+
+    <string name="edit">Sửa</string>
+
+    <string name="remove">Xóa</string>
+
+    <string name="level">Hệ:</string>
+
+    <string name="sort_name">Sort Name</string>
+
+    <string name="sort_year">Sort Year</string>
+
+    <string name="sort_phone_number">Sort Phone</string>
+
+    <string name="filter_col">Lọc CĐ</string>
+
+    <string name="filter_uni">Lọc ĐH</string>
+
+    <string name="show_list">Hiển Thị</string>
+
+    <string name="save">Lưu</string>
+
+    <string name="university">Đại học</string>
+
+    <string name="college">Cao đẳng</string>
+
+</resources>
