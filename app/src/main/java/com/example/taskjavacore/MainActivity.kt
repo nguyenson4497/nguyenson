@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     val university: String = "Dai Hoc"
     val college: String = "Cao Dang"
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
