@@ -187,9 +187,7 @@ class MainActivity : AppCompatActivity() {
     fun removeStudent() {
         var phoneStudent: String = edt_phone_number.text.toString().trim()
         for (i in listStudent) {
-            listStudent.removeIf {
-                it.checkPhoneNumber(phoneStudent)
-            }
+
         }
     }
 
