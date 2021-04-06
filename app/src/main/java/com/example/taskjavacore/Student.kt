@@ -14,4 +14,11 @@ class Student(
         }
         return false
     }
+
+    fun checkPhoneNumber(phone: String):Boolean{
+        if(phoneNumber == phone){
+            return true
+        }
+        return false
+    }
 }

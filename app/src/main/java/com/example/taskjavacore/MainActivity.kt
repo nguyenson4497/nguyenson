@@ -76,26 +76,31 @@ class MainActivity : AppCompatActivity() {
         })
 
         //Button (Filter)
-        btn_filter_col.setOnClickListener {
-            View.OnClickListener {
-                filterByCollege()
-            }
-        }
-        btn_filter_uni.setOnClickListener {
-            View.OnClickListener {
-                filterByUniversity()
-            }
-        }
-
+        btn_filter_col.setOnClickListener(View.OnClickListener {
+            newListStudent.clear()
+            filterByCollege()
+        })
+        btn_filter_uni.setOnClickListener(View.OnClickListener {
+            newListStudent.clear()
+            filterByUniversity()
+        })
     }
 
     //Filter Student
     fun filterByUniversity() {
-
+        var rs = listStudent.filter {
+            it.level == "Dai Hoc"
+        }
+        newListStudent.addAll(rs.toMutableList())
+        studentAdapter.setData(newListStudent)
     }
 
     fun filterByCollege() {
-
+        var rs = listStudent.filter {
+            it.level == "Cao Dang"
+        }
+        newListStudent.addAll(rs.toMutableList())
+        studentAdapter.setData(newListStudent)
     }
 
     //Add Student
@@ -167,16 +172,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Remove Student
+    /* fun removeStudent() {
+         var phoneStudent: String = edt_phone_number.text.toString().trim()
+         for (i in listStudent) {
+             if (!i.phoneNumber.trim().equals(phoneStudent)) {
+                 newListStudent.add(i)
+             }
+         }
+         listStudent.clear()
+         listStudent.addAll(newListStudent)
+         studentAdapter.setData(listStudent)
+     }*/
+
     fun removeStudent() {
         var phoneStudent: String = edt_phone_number.text.toString().trim()
         for (i in listStudent) {
-            if (!i.phoneNumber.trim().equals(phoneStudent)) {
-                newListStudent.add(i)
+            listStudent.removeIf {
+                it.checkPhoneNumber(phoneStudent)
             }
         }
-        listStudent.clear()
-        listStudent.addAll(newListStudent)
-        studentAdapter.setData(listStudent)
     }
 
     //Sort Student
