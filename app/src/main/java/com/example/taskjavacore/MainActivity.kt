@@ -1,8 +1,10 @@
 package com.example.taskjavacore
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -130,12 +132,20 @@ class MainActivity : AppCompatActivity() {
     //Edit Student
     fun editStudent() {
         var phoneNumber: String = edt_phone_number.text.toString().trim()
-        for (i in listStudent) {
-            if (i.phoneNumber.equals(phoneNumber)) {
-                edt_name.setText(i.name)
-                edt_year_of_birth.setText(i.yearOfBirth)
-                edt_field.setText(i.field)
-                edt_level.setText(i.level)
+        if (phoneNumber.length == 0) {
+            Toast.makeText(
+                this,
+                "Ban chua nhap so dien thoai sinh vien can tim",
+                Toast.LENGTH_SHORT
+            )
+        } else {
+            for (i in listStudent) {
+                if (i.phoneNumber.equals(phoneNumber)) {
+                    edt_name.setText(i.name)
+                    edt_year_of_birth.setText(i.yearOfBirth)
+                    edt_field.setText(i.field)
+                    edt_level.setText(i.level)
+                }
             }
         }
     }
@@ -184,11 +194,14 @@ class MainActivity : AppCompatActivity() {
          studentAdapter.setData(listStudent)
      }*/
 
+    @RequiresApi(Build.VERSION_CODES.N)
     fun removeStudent() {
         var phoneStudent: String = edt_phone_number.text.toString().trim()
-        for (i in listStudent) {
-
+        if (phoneStudent.length == 0) {
+            Toast.makeText(this, "Nhap so dien thoai cua sinh vien can xoa", Toast.LENGTH_SHORT)
         }
+        listStudent.removeIf { it.phoneNumber == phoneStudent }
+        studentAdapter.setData(listStudent)
     }
 
     //Sort Student
