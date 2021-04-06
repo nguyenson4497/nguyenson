@@ -14,9 +14,6 @@ class MainActivity : AppCompatActivity() {
     var newListStudent: MutableList<Student> = mutableListOf()
     var studentAdapter: StudentAdapter = StudentAdapter()
 
-    val university: String = "Dai Hoc"
-    val college: String = "Cao Dang"
-
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
