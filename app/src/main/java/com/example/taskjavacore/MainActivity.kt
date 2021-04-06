@@ -91,16 +91,11 @@ class MainActivity : AppCompatActivity() {
 
     //Filter Student
     fun filterByUniversity() {
-        for (i in listStudent) {
-            if (i.checkFilter(university)) {
-                newListStudent.add(i)
-            }
-        }
-        studentAdapter.setData(newListStudent)
+
     }
 
     fun filterByCollege() {
-        studentAdapter.filterStudent.filter("Cao dang")
+
     }
 
     //Add Student
@@ -175,7 +170,7 @@ class MainActivity : AppCompatActivity() {
     fun removeStudent() {
         var phoneStudent: String = edt_phone_number.text.toString().trim()
         for (i in listStudent) {
-            if (!i.phoneNumber.equals(phoneStudent)) {
+            if (!i.phoneNumber.trim().equals(phoneStudent)) {
                 newListStudent.add(i)
             }
         }
