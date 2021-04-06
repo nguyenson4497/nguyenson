@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val listStudent: MutableList<Student> = mutableListOf()
-    val listAllStudent: MutableList<Student> = mutableListOf()
+    var listStudent: MutableList<Student> = mutableListOf()
+    var newListStudent: MutableList<Student> = mutableListOf()
     var studentAdapter: StudentAdapter = StudentAdapter()
+
+    val university: String = "Dai Hoc"
+    val college: String = "Cao Dang"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             removeStudent()
         })
         btn_find.setOnClickListener(View.OnClickListener {
+            newListStudent.clear()
             findStudent()
         })
 
@@ -69,9 +73,6 @@ class MainActivity : AppCompatActivity() {
         })
         btn_sort_phone_number.setOnClickListener(View.OnClickListener {
             sortPhoneNumber()
-        })
-        btn_sort_year.setOnClickListener(View.OnClickListener {
-            sortYear()
         })
 
         //Button (Filter)
@@ -91,18 +92,15 @@ class MainActivity : AppCompatActivity() {
     //Filter Student
     fun filterByUniversity() {
         for (i in listStudent) {
-            if(i.level.equals("Dai Hoc")) {
-                studentAdapter.filter
+            if (i.checkFilter(university)) {
+                newListStudent.add(i)
             }
         }
+        studentAdapter.setData(newListStudent)
     }
 
     fun filterByCollege() {
-        for (i in listStudent) {
-            if(i.level.equals("Cao Dang")) {
-                studentAdapter.filter
-            }
-        }
+        studentAdapter.filterStudent.filter("Cao dang")
     }
 
     //Add Student
@@ -175,20 +173,21 @@ class MainActivity : AppCompatActivity() {
 
     //Remove Student
     fun removeStudent() {
-
+        var phoneStudent: String = edt_phone_number.text.toString().trim()
+        for (i in listStudent) {
+            if (!i.phoneNumber.equals(phoneStudent)) {
+                newListStudent.add(i)
+            }
+        }
+        listStudent.clear()
+        listStudent.addAll(newListStudent)
+        studentAdapter.setData(listStudent)
     }
 
     //Sort Student
     fun sortName() {
         listStudent.sortBy {
             it.name.toLowerCase()
-        }
-        studentAdapter.setData(listStudent)
-    }
-
-    fun sortYear() {
-        listStudent.sortedByDescending {
-            it.yearOfBirth
         }
         studentAdapter.setData(listStudent)
     }
@@ -203,9 +202,11 @@ class MainActivity : AppCompatActivity() {
     //Find Student
     fun findStudent() {
         var findStudent: String = edt_find.text.toString().trim()
-        listStudent.any {
-            it.checkFind(findStudent) == true
+        for (i in listStudent) {
+            if (i.checkFind(findStudent)) {
+                newListStudent.add(i)
+            }
         }
-        studentAdapter.setData(listStudent)
+        studentAdapter.setData(newListStudent)
     }
 }

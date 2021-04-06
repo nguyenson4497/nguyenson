@@ -10,11 +10,13 @@
         android:layout_height="@dimen/dp_130"
         android:layout_margin="@dimen/dp_5"
         android:padding="@dimen/dp_5"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
         android:orientation="horizontal">
 
         <TextView
@@ -41,6 +43,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
         android:orientation="horizontal">
 
         <TextView
@@ -67,6 +71,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
         android:orientation="horizontal">
 
         <TextView
@@ -93,6 +99,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
         android:orientation="horizontal">
 
         <TextView
@@ -117,6 +125,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
         android:orientation="horizontal">
 
         <TextView
@@ -142,7 +152,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
         android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_5"
         android:gravity="center"
         android:padding="@dimen/dp_5">
 
@@ -183,7 +195,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
         android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_5"
         android:gravity="center"
         android:padding="@dimen/dp_5">
 
@@ -194,14 +208,6 @@
             android:layout_margin="@dimen/dp_10"
             android:layout_weight="1"
             android:text="@string/sort_name" />
-
-        <Button
-            android:id="@+id/btn_sort_year"
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="@dimen/dp_50"
-            android:layout_margin="@dimen/dp_10"
-            android:layout_weight="1"
-            android:text="@string/sort_year" />
 
         <Button
             android:id="@+id/btn_sort_phone_number"
@@ -232,7 +238,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_5"
         android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_5"
         android:gravity="center"
         android:padding="@dimen/dp_5">
 

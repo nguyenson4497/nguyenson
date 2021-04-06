@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class StudentAdapter : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(), Filterable {
     var listData: MutableList<Student> = mutableListOf()
-    var listDataAll: MutableList<Student> = mutableListOf()
 
     fun setData(listData: MutableList<Student>) {
         this.listData = listData
@@ -32,19 +31,18 @@ class StudentAdapter : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(),
         return filterStudent
     }
 
-    var filterStudent = object : Filter() {
+    var filterStudent = object: Filter() {
         override fun performFiltering(p0: CharSequence?): FilterResults {
+            var filterRs = FilterResults()
             var filterStudentList: MutableList<Student> = mutableListOf()
-            for (i in listDataAll) {
+            for (i in listData) {
                 if (i.checkFind(p0.toString().trim())) {
                     filterStudentList.add(i)
                 }
             }
-            var filterRs: FilterResults = FilterResults()
             filterRs.values = filterStudentList
             return filterRs
         }
-
 
         override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
             listData.clear()
@@ -54,18 +52,15 @@ class StudentAdapter : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(),
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-        var student: Student = listData[position]
-        holder.nameStudent.text = student.name
-        holder.phoneStudent.text = student.phoneNumber
-        holder.levelStudent.text = student.level
+        holder.nameStudent.text = listData[position].name
+        holder.phoneStudent.text = listData[position].phoneNumber
+        holder.levelStudent.text = listData[position].level
     }
 
     class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         var nameStudent: TextView = itemView.findViewById(R.id.tv_show_name)
         var phoneStudent: TextView = itemView.findViewById(R.id.tv_show_phone_number)
         var levelStudent: TextView = itemView.findViewById(R.id.tv_show_level)
-
     }
 
 

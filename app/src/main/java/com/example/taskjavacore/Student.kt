@@ -14,4 +14,11 @@ class Student(
         }
         return false
     }
+
+    fun checkFilter(string: String):Boolean {
+        if (level.equals(string, true)){
+            return true
+        }
+        return false
+    }
 }
