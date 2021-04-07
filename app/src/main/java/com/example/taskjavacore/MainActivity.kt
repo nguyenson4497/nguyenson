@@ -116,6 +116,12 @@ class MainActivity : AppCompatActivity() {
         ) {
             Toast.makeText(this, "Vui long dien day du thong tin", Toast.LENGTH_SHORT).show()
         } else {
+            for (i in listStudent){
+                if(i.checkPhoneNumber(phoneNumber)){
+                    Toast.makeText(this, "So dien thoai da ton tai", Toast.LENGTH_SHORT).show()
+                    return
+                }
+            }
             var student: Student = Student(name, yearOfBirth, phoneNumber, field, level)
             listStudent.add(student)
             edt_name.text.clear()
@@ -138,7 +144,7 @@ class MainActivity : AppCompatActivity() {
             )
         } else {
             for (i in listStudent) {
-                if (i.phoneNumber.equals(phoneNumber)) {
+                if (i.checkPhoneNumber(phoneNumber)) {
                     edt_name.setText(i.name)
                     edt_year_of_birth.setText(i.yearOfBirth)
                     edt_field.setText(i.field)
@@ -162,7 +168,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Vui long dien day du thong tin", Toast.LENGTH_SHORT).show()
         } else {
             for (i in listStudent) {
-                if (i.phoneNumber.equals(phoneNumber)) {
+                if (i.checkPhoneNumber(phoneNumber)) {
                     i.name = name
                     i.yearOfBirth = yearOfBirth
                     i.field = field
