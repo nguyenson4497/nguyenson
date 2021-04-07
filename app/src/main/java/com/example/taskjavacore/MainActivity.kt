@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     var listStudent: MutableList<Student> = mutableListOf()
-    var newListStudent: MutableList<Student> = mutableListOf()
     var studentAdapter: StudentAdapter = StudentAdapter()
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -63,7 +62,6 @@ class MainActivity : AppCompatActivity() {
             removeStudent()
         })
         btn_find.setOnClickListener(View.OnClickListener {
-            newListStudent.clear()
             findStudent()
         })
 
@@ -77,11 +75,9 @@ class MainActivity : AppCompatActivity() {
 
         //Button (Filter)
         btn_filter_col.setOnClickListener(View.OnClickListener {
-            newListStudent.clear()
             filterByCollege()
         })
         btn_filter_uni.setOnClickListener(View.OnClickListener {
-            newListStudent.clear()
             filterByUniversity()
         })
     }
@@ -91,16 +87,14 @@ class MainActivity : AppCompatActivity() {
         var rs = listStudent.filter {
             it.level == "Dai Hoc"
         }
-        newListStudent.addAll(rs.toMutableList())
-        studentAdapter.setData(newListStudent)
+        studentAdapter.setData(rs.toMutableList())
     }
 
     fun filterByCollege() {
         var rs = listStudent.filter {
             it.level == "Cao Dang"
         }
-        newListStudent.addAll(rs.toMutableList())
-        studentAdapter.setData(newListStudent)
+        studentAdapter.setData(rs.toMutableList())
     }
 
     //Add Student
@@ -186,18 +180,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Remove Student
-    /* fun removeStudent() {
-         var phoneStudent: String = edt_phone_number.text.toString().trim()
-         for (i in listStudent) {
-             if (!i.phoneNumber.trim().equals(phoneStudent)) {
-                 newListStudent.add(i)
-             }
-         }
-         listStudent.clear()
-         listStudent.addAll(newListStudent)
-         studentAdapter.setData(listStudent)
-     }*/
-
     @RequiresApi(Build.VERSION_CODES.N)
     fun removeStudent() {
         var phoneStudent: String = edt_phone_number.text.toString().trim()
