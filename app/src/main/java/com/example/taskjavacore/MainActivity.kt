@@ -229,7 +229,6 @@ class MainActivity : AppCompatActivity() {
         var rs = listStudent.filter {
             it.checkFind(findStudent)
         }
-        newListStudent.addAll(rs.toMutableList())
-        studentAdapter.setData(newListStudent)
+        studentAdapter.setData(rs.toMutableList())
     }
 }
