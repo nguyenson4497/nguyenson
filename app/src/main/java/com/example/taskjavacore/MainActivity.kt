@@ -226,11 +226,10 @@ class MainActivity : AppCompatActivity() {
     //Find Student
     fun findStudent() {
         var findStudent: String = edt_find.text.toString().trim()
-        for (i in listStudent) {
-            if (i.checkFind(findStudent)) {
-                newListStudent.add(i)
-            }
+        var rs = listStudent.filter {
+            it.checkFind(findStudent)
         }
+        newListStudent.addAll(rs.toMutableList())
         studentAdapter.setData(newListStudent)
     }
 }
